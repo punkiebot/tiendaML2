@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: url(./images/fondo.png);
+  background-size: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* header */
+
+header {
+  padding: 40px 0;
+}
+
+header .logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header .logo h1 {
+  font-weight: 400;
+}
+
+header .logo p {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+header form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+header .barra-busqueda {
+  width: 70%;
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  padding: 0 20px;
+  border-radius: 100px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+}
+
+header .categorias {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+}
+
+header .categorias a {
+  color: gray;
+  margin: 10px 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+header .categorias a.activo {
+  color: black;
+}
+
+/* grid de muuri */
+
+.grid {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s linear 1s;
+}
+
+.grid.imagenes-cargadas {
+  opacity: 1;
+}
+
+.grid .item {
+  position: absolute;
+  display: block;
+  padding: 0px;
+  margin: 10px;
+  width: calc(33.333333% - 20px);
+}
+
+.grid .item-contenido {
+  position: relative;
+}
+.grid .item img {
+  width: 100%;
+  cursor: pointer;
+  vertical-align: top;
+
+  height: 300px;
+  border-radius: 10px;
+}
+
+.item-description p {
+  margin: 5px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* overlay */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.overlay.activo {
+  display: flex;
+}
+
+.overlay img {
+  max-width: 100%;
+}
+
+.overlay .description {
+  display: block;
+  background: #fff;
+  padding: 20px;
+  text-align: left;
+  margin-top: 5px;
+  border-radius: 10px;
+  max-width: 60%;
+  overflow-y: scroll;
+}
+
+.overlay .description h4 {
+  margin: 10px 0;
+}
+
+.overlay .description p {
+  margin-top: 8px;
+}
+
+.contenedor-img {
+  position: relative;
+}
+
+.overlay #btn-cerrar-popup {
+  background: none;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+}
+
+.imagenes-fin {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.imagenes-fin div {
+  margin: 10px;
+}
+.contenedor #whats {
+  font-size: 25px;
+  color: #075e54;
+}
+
+footer .creado-por {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: #3d383b;
+}
+
+/* medias queries */
+
+@media screen and (max-width: 700px) {
+  .grid .item {
+    width: calc(50% - 20px);
+  }
+
+  header .barra-busqueda {
+    width: 100%;
+  }
+}
